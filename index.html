@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Interest Calculator</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Compound Interest Calculator</h1>
+        <form id="compoundInterestForm">
+            <div class="form-group">
+                <label for="principal">Principal Amount:</label>
+                <input type="number" class="form-control" id="principal" name="principal" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="rate">Annual Interest Rate:</label>
+                <input type="number" class="form-control" id="rate" name="rate" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="compounding">Compounding Frequency:</label>
+                <select class="form-control" id="compounding" name="compounding" required>
+                    <option value="1">Annually</option>
+                    <option value="2">Semi-Annually</option>
+                    <option value="4">Quarterly</option>
+                    <option value="12">Monthly</option>
+                    <option value="365">Daily</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="time">Time in years:</label>
+                <input type="number" class="form-control" id="time" name="time" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="finalAmount">Final Amount:</label>
+                <input type="text" class="form-control" id="finalAmount" name="finalAmount" readonly>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate Final Amount</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
