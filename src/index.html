@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compound Interest Calculator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header">
+          <h1>Compound Interest Calculator</h1>
+        </div>
+        <div class="card-body">
+          <form id="compoundInterestForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+              <label for="principal" class="form-label">Principal</label>
+              <input
+                type="number"
+                class="form-control"
+                id="principal"
+                name="principal"
+                required
+              />
+              <div class="invalid-feedback">
+                Please enter the principal amount.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="rate" class="form-label">Annual Interests</label>
+              <input
+                type="number"
+                class="form-control"
+                id="rate"
+                name="rate"
+                required
+              />
+              <div class="invalid-feedback">
+                Please enter the annual interest rate.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="compounding" class="form-label"
+                >Compounding Frequency</label
+              >
+              <select
+                class="form-control"
+                id="compounding"
+                name="compounding"
+                required
+              >
+                <option value="">Choose...</option>
+                <option value="1">Annually</option>
+                <option value="2">Semi-Annually</option>
+                <option value="4">Quarterly</option>
+                <option value="12">Monthly</option>
+                <option value="365">Daily</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select the compounding frequency.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="time" class="form-label">Time in years</label>
+              <input
+                type="number"
+                class="form-control"
+                id="time"
+                name="time"
+                required
+              />
+              <div class="invalid-feedback">
+                Please enter the time in years.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="finalAmount" class="form-label">Final Amount</label>
+              <input
+                type="text"
+                class="form-control"
+                id="finalAmount"
+                name="finalAmount"
+                readonly
+              />
+            </div>
+            <button type="submit" id="calculate" class="btn btn-primary">
+              Calculate Final Amount
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
