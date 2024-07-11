@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 
 const html: string = fs.readFileSync(
-  path.resolve(__dirname, "./build/index.html"),
+  path.resolve(__dirname, "./src/index.html"),
   "utf8",
 );
 document.body.innerHTML = html;
