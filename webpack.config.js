@@ -2,9 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  devtool: "eval-source-map",
 
-  mode: "development",
+  mode: "production",
 
   entry: "./src/main.ts",
 
@@ -15,7 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|ts)$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
         use: [
           {
@@ -31,7 +30,7 @@ module.exports = {
   },
 
   output: {
-    publicPath: "/build/",
+    publicPath: "/",
     filename: "main.js",
     path: path.resolve(__dirname, "build"),
   },

@@ -5,6 +5,8 @@
     "dev": "webpack-dev-server"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
     "jest-environment-jsdom": "^29.7.0",
     "typescript": "^5.5.3"
   },
