@@ -1,4 +1,9 @@
 export function getFloatValue(inputId: string): number {
+  const inputValue = (document.getElementById(inputId) as HTMLInputElement).value 
+  if(inputValue == "") {
+    return 0;
+  }
+
   return parseFloat(
     (document.getElementById(inputId) as HTMLInputElement).value,
   );

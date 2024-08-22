@@ -44,6 +44,15 @@
               </div>
             </div>
             <div class="mb-3">
+              <label for="variance" class="form-label">Interest rate variance range</label>
+              <input
+                type="number"
+                class="form-control"
+                id="variance"
+                name="variance"
+              />
+            </div>
+            <div class="mb-3">
               <label for="compounding" class="form-label"
                 >Compounding Frequency</label
               >
@@ -84,6 +93,26 @@
                 class="form-control"
                 id="finalAmount"
                 name="finalAmount"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label for="finalAmountVarianceAbove" class="form-label">Final Amount variance above</label>
+              <input
+                type="text"
+                class="form-control"
+                id="finalAmountVarianceAbove"
+                name="finalAmountVarianceAbove"
+                readonly
+              />
+            </div>
+            <div class="mb-3">
+              <label for="finalAmountVarianceBelow" class="form-label">Final Amount variance below</label>
+              <input
+                type="text"
+                class="form-control"
+                id="finalAmountVarianceBelow"
+                name="finalAmountVarianceBelow"
                 readonly
               />
             </div>
