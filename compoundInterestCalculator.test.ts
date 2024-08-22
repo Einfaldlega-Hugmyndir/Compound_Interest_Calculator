@@ -15,6 +15,9 @@ let rate: HTMLInputElement;
 let compounding: HTMLInputElement;
 let time: HTMLInputElement;
 let finalAmount: HTMLInputElement;
+let variance: HTMLInputElement;
+let varianceAboveAmount: HTMLInputElement;
+let varianceBelowAmount: HTMLInputElement;
 let calculateButt: HTMLInputElement;
 
 beforeEach(() => {
@@ -23,6 +26,9 @@ beforeEach(() => {
   compounding = document.getElementById("compounding") as HTMLInputElement;
   time = document.getElementById("time") as HTMLInputElement;
   finalAmount = document.getElementById("finalAmount") as HTMLInputElement;
+  variance = document.getElementById("variance") as HTMLInputElement;
+  varianceAboveAmount = document.getElementById("finalAmountVarianceAbove") as HTMLInputElement;
+  varianceBelowAmount = document.getElementById("finalAmountVarianceBelow") as HTMLInputElement;
   calculateButt = document.getElementById("calculate") as HTMLInputElement;
 
   // Reset input values
@@ -30,6 +36,9 @@ beforeEach(() => {
   rate.value = "";
   compounding.value = "";
   time.value = "";
+  variance.value = ""
+  varianceAboveAmount.value = ""
+  varianceBelowAmount.value  = ""
   finalAmount.value = "";
 });
 
@@ -46,6 +55,39 @@ describe("Compound Interest Calculator", () => {
       fireEvent.click(calculateButt);
 
       expect(finalAmount.value).toBe(calculatedAmount);
+    });
+
+  });
+
+  describe("Displays above variance", () => {
+    test("Displays Final amount with above variance", () => {
+      principal.value = "50000";
+      rate.value = "10";
+      time.value = "3";
+      compounding.value = "1";
+      variance.value = "3";
+
+      const calculatedvarianceAboveAmount: string = "72144.85";
+
+      fireEvent.click(calculateButt);
+
+      expect(varianceAboveAmount.value).toBe(calculatedvarianceAboveAmount);
+    });
+  });
+
+  describe("Displays below variance", () => {
+    test("Displays Final amount with below variance", () => {
+      principal.value = "50000";
+      rate.value = "10";
+      time.value = "3";
+      compounding.value = "1";
+      variance.value = "3";
+
+      const calculatedvarianceAboveAmount: string = "61252.15";
+
+      fireEvent.click(calculateButt);
+
+      expect(varianceBelowAmount.value).toBe(calculatedvarianceAboveAmount);
     });
   });
 
