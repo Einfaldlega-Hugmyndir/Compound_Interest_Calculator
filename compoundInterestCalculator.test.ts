@@ -2,12 +2,11 @@ const { fireEvent } = require("@testing-library/dom");
 import fs from "fs";
 import path from "path";
 
-const html: string = fs.readFileSync(
-  path.resolve(__dirname, "./src/index.html"),
-  "utf8",
-);
-document.body.innerHTML = html;
 
+document.body.innerHTML = fs.readFileSync(
+  path.resolve(__dirname, "./src/index.html"), "utf8");
+
+// This import must be after the inner html has been configured so it can fetch values and inputs.
 import "./src/main";
 
 let principal: HTMLInputElement;
@@ -27,8 +26,12 @@ beforeEach(() => {
   time = document.getElementById("time") as HTMLInputElement;
   finalAmount = document.getElementById("finalAmount") as HTMLInputElement;
   variance = document.getElementById("variance") as HTMLInputElement;
-  varianceAboveAmount = document.getElementById("finalAmountVarianceAbove") as HTMLInputElement;
-  varianceBelowAmount = document.getElementById("finalAmountVarianceBelow") as HTMLInputElement;
+  varianceAboveAmount = document.getElementById(
+    "finalAmountVarianceAbove"
+  ) as HTMLInputElement;
+  varianceBelowAmount = document.getElementById(
+    "finalAmountVarianceBelow"
+  ) as HTMLInputElement;
   calculateButt = document.getElementById("calculate") as HTMLInputElement;
 
   // Reset input values
@@ -36,9 +39,9 @@ beforeEach(() => {
   rate.value = "";
   compounding.value = "";
   time.value = "";
-  variance.value = ""
-  varianceAboveAmount.value = ""
-  varianceBelowAmount.value  = ""
+  variance.value = "";
+  varianceAboveAmount.value = "";
+  varianceBelowAmount.value = "";
   finalAmount.value = "";
 });
 
@@ -56,7 +59,6 @@ describe("Compound Interest Calculator", () => {
 
       expect(finalAmount.value).toBe(calculatedAmount);
     });
-
   });
 
   describe("Displays above variance", () => {
@@ -83,11 +85,11 @@ describe("Compound Interest Calculator", () => {
       compounding.value = "1";
       variance.value = "3";
 
-      const calculatedvarianceAboveAmount: string = "61252.15";
+      const calculatedvarianceBelowAmount: string = "61252.15";
 
       fireEvent.click(calculateButt);
 
-      expect(varianceBelowAmount.value).toBe(calculatedvarianceAboveAmount);
+      expect(varianceBelowAmount.value).toBe(calculatedvarianceBelowAmount);
     });
   });
 

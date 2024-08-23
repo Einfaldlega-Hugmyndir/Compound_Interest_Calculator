@@ -18,7 +18,7 @@ function calculateVariance(
   compoundsPerYear: number,
   years : number,
   variance : number
-) {
+) : { total_above: number; total_below: number } {
   if(variance < 0) {
     throw new RangeError("Variance must be positive.");
   }
@@ -30,8 +30,8 @@ function calculateVariance(
   const total_below = calculateCompoundInterest(principal, (annualRateBelow/100), 
                                                 compoundsPerYear, 
                                                 years)
-  return {"total_above" : parseFloat(total_above.toFixed(3)),   
-          "total_below": parseFloat(total_below.toFixed(3))
+  return {"total_above" : total_above, 
+          "total_below": total_below
    };
 }
 

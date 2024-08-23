@@ -30,3 +30,7 @@ To execute the unit tests, run the following command: `npm test` and make sure n
 1. If needed, build the project by running the following command: `npm run build`
 
 2. Start the developement server `npm run dev`. The project should open in the browser automatically.
+
+## Support the maintainer
+
+This project is maintained by Arnar Freyr Kristinsson. If you like to support the maintainer you can [buy the maintainer a coffee](https://buymeacoffee.com/afk0901)
