@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vaxtareiknivél</title>
+    <title>Compound Interest Calculator</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,12 +13,12 @@
     <div class="container mt-5">
       <div class="card">
         <div class="card-header">
-          <h1>Vaxtareiknivél</h1>
+          <h1>Compound Interest Calculator</h1>
         </div>
         <div class="card-body">
           <form id="compoundInterestForm" class="needs-validation" novalidate>
             <div class="mb-3">
-              <label for="principal" class="form-label">Höfuðstóll</label>
+              <label for="principal" class="form-label">Principal</label>
               <input
                 type="number"
                 class="form-control"
@@ -27,11 +27,11 @@
                 required
               />
               <div class="invalid-feedback">
-                Vinsamlegast sláðu inn höfuðstól
+                Please enter the principal amount.
               </div>
             </div>
             <div class="mb-3">
-              <label for="rate" class="form-label">Vextir</label>
+              <label for="rate" class="form-label">Annual Interests</label>
               <input
                 type="number"
                 class="form-control"
@@ -40,11 +40,11 @@
                 required
               />
               <div class="invalid-feedback">
-                Vinsamlegast sláið inn vexti
+                Please enter the annual interest rate.
               </div>
             </div>
             <div class="mb-3">
-              <label for="variance" class="form-label">Efra og neðra bil vaxta (-+)</label>
+              <label for="variance" class="form-label">Interest rate variance range</label>
               <input
                 type="number"
                 class="form-control"
@@ -53,26 +53,28 @@
               />
             </div>
             <div class="mb-3">
-              <label for="compounding" class="form-label">Tíðni</label>
+              <label for="compounding" class="form-label"
+                >Compounding Frequency</label
+              >
               <select
                 class="form-control"
                 id="compounding"
                 name="compounding"
                 required
               >
-                <option value="">Veldu...</option>
-                <option value="1">Árlega</option>
-                <option value="2">Hálfs-árslega</option>
-                <option value="4">Fjórðungslega</option>
-                <option value="12">Mánaðarlega</option>
-                <option value="365">Daglega</option>
+                <option value="">Choose...</option>
+                <option value="1">Annually</option>
+                <option value="2">Semi-Annually</option>
+                <option value="4">Quarterly</option>
+                <option value="12">Monthly</option>
+                <option value="365">Daily</option>
               </select>
               <div class="invalid-feedback">
-                Vinsamlegast sláðu inn tíðni 
+                Please select the compounding frequency.
               </div>
             </div>
             <div class="mb-3">
-              <label for="time" class="form-label">Tími í árum</label>
+              <label for="time" class="form-label">Time in years</label>
               <input
                 type="number"
                 class="form-control"
@@ -81,11 +83,11 @@
                 required
               />
               <div class="invalid-feedback">
-                Vinsamlegast sláið inn tíma í árum
+                Please enter the time in years.
               </div>
             </div>
             <div class="mb-3">
-              <label for="finalAmount" class="form-label">Heildartíðni</label>
+              <label for="finalAmount" class="form-label">Final Amount</label>
               <input
                 type="text"
                 class="form-control"
@@ -95,7 +97,7 @@
               />
             </div>
             <div class="mb-3">
-              <label for="finalAmountVarianceAbove" class="form-label">Heildarupphæð með efri mörkum vaxta</label>
+              <label for="finalAmountVarianceAbove" class="form-label">Final Amount variance above</label>
               <input
                 type="text"
                 class="form-control"
@@ -105,7 +107,7 @@
               />
             </div>
             <div class="mb-3">
-              <label for="finalAmountVarianceBelow" class="form-label">Heildarupphæð með neðri mörkum vaxta</label>
+              <label for="finalAmountVarianceBelow" class="form-label">Final Amount variance below</label>
               <input
                 type="text"
                 class="form-control"
@@ -115,7 +117,7 @@
               />
             </div>
             <button type="submit" id="calculate" class="btn btn-primary">
-              Reikna
+              Calculate Final Amount
             </button>
           </form>
         </div>
