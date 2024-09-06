@@ -1,12 +1,22 @@
 import initializeValidation from "./formValidationPreventSubmit";
 import {calculateCompoundInterest, calculateVariance} from "./services/calculations";
-import { getFloatValue, updateOutput } from "./services/formInputs";
+import {getFloatValue, updateOutput, OnlyPositiveNumbers} from "./services/formInputs";
 
 initializeValidation();
 
 const form: HTMLFormElement = document.getElementById("compoundInterestForm") as HTMLFormElement;
 
 form.addEventListener("submit", handleFormSubmit);
+
+form.addEventListener("input", (event) => {
+  let target = event.target as HTMLInputElement;
+
+  if (
+    ["principal", "rate", "compounding", "time", "variance"].includes(target.id)
+  ) {
+    target.value = OnlyPositiveNumbers(target.value);
+  }
+});
 
 function handleFormSubmit(event: Event): void {
   event.preventDefault();
@@ -29,8 +39,8 @@ function handleFormSubmit(event: Event): void {
     compounding,
     time,
     variance
-  )
- 
+  );
+
   if (form.checkValidity() === true) {
     updateOutput("finalAmount", finalAmount);
     updateOutput("finalAmountVarianceAbove", calculatedVariance.total_above);
