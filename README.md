@@ -16,8 +16,8 @@ Node.js installed on your system.
 
 ## Installation
 
-1. Clone the repository via SSH: `git@github.com:afk0901/Compound_Interest_Calculator.git`
-   or via HTTPS: `git clone https://github.com/afk0901/Compound_Interest_Calculator.git`
+1. Clone the repository via SSH: `git@github.com:Einfaldlega-Hugmyndir/Compound_Interest_Calculator.git`
+   or via HTTPS: `git clone https://github.com/Einfaldlega-Hugmyndir/Compound_Interest_Calculator.git`
 
 2. Navigate to the project directory: `cd Compound_Interest_Calculator`
 
