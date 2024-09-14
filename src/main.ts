@@ -12,11 +12,13 @@ form.addEventListener("input", (event) => {
   let target = event.target as HTMLInputElement;
 
   if (
-    ["principal", "rate", "compounding", "time", "variance"].includes(target.id)
+    ["principal", "rate", "compounding", "time", "variance", "monthcontrib"].includes(target.id)
   ) {
     target.value = OnlyPositiveNumbers(target.value);
   }
 });
+
+
 
 function handleFormSubmit(event: Event): void {
   event.preventDefault();
@@ -26,11 +28,14 @@ function handleFormSubmit(event: Event): void {
   const compounding: number = getFloatValue("compounding");
   const time: number = getFloatValue("time");
   const variance: number = getFloatValue("variance");
+  const monthcontrib: number = getFloatValue("monthcontrib");
+
   const finalAmount: number = calculateCompoundInterest(
     principal,
     rate / 100,
     compounding,
-    time
+    time,
+    monthcontrib
   );
 
   const calculatedVariance = calculateVariance(
@@ -38,7 +43,8 @@ function handleFormSubmit(event: Event): void {
     rate,
     compounding,
     time,
-    variance
+    variance,
+    monthcontrib
   );
 
   if (form.checkValidity() === true) {
